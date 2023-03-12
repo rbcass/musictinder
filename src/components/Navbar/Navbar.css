@@ -65,3 +65,62 @@
     color: aquamarine;
 }
 
+/* css for the hidden hamburger icon and overlay for mobile and small screens*/
+.shrink{
+    display: none;
+}
+
+.shrinkOverlay{
+    z-index: 5;
+    position:fixed;
+    width: 100%;
+    top:0;
+    left:0;
+    height:100vh;
+    background-color: black;
+    background: linear-gradient(90deg, rgb(7, 6, 32) 0%, rgb(2, 14, 59) 44%, rgba(0,0,0,1) 89%, rgb(19, 40, 44) 100%);
+    transition: 0.2s;
+    flex-direction: column;
+}
+
+.overlayIcon{
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    align-items: center;
+
+ 
+}
+
+/* css element that shows overlay/toggle js */
+
+@media screen and (max-width: 1150px){
+    .navLinks {
+        display: none;
+    }
+
+
+    .shrink{
+        display: flex;
+    }
+
+    .shrinkNavLinks{
+        display: flex;
+        flex-direction: column;
+        font-size: 30px;
+        margin: 50vh;
+        list-style-type: none;
+        cursor: pointer;
+        transition: 0.2s;
+       
+
+    }
+
+    .shrinkNavLinks:hover{
+
+        text-decoration: underline goldenrod;
+    }
+}
+

@@ -1,22 +1,22 @@
 import React from 'react';
 
 /* importing all the sections of the website!*/ 
-import { AboutUs, Chef, FindUs, Footer, Gallery, Header, Intro, Laurels, SpecialMenu } from './container';
+import { About, Profiles, Contact, Footer, Gallery, Header, Intro, Laurels, SpecialMenu } from './container';
 import { Navbar } from './components';
 import './App.css';
 
 const App = () => (
   <div>
     <Navbar />
-    <Header />
-    <AboutUs />
+    <Header/>
+    {/* <About />
     <SpecialMenu />
-    <Chef />
+    <Profiles/>
     <Intro />
     <Laurels />
     <Gallery />
-    <FindUs />
-    <Footer />
+    <Contact />
+    <Footer /> */}
   </div>
 );
 

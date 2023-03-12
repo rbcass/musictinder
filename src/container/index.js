@@ -1,6 +1,6 @@
-import AboutUs from './AboutUs/AboutUs';
-import Chef from './Chef/Chef';
-import FindUs from './Findus/FindUs';
+import About from './About/About';
+import Profiles from './Profiles/Profiles';
+import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
 import Gallery from './Gallery/Gallery';
 import Header from './Header/Header';
@@ -9,9 +9,9 @@ import Laurels from './Laurels/Laurels';
 import SpecialMenu from './Menu/SpecialMenu';
 
 export {
-  AboutUs,
-  Chef,
-  FindUs,
+  About,
+  Profiles,
+  Contact,
   Footer,
   Gallery,
   Header,
