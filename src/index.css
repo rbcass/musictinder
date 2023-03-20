@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+/* css base for all pages!*/
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&display=swap');
 
-:root {
-  --font-base: 'Cormorant Upright', serif;
+html {
+  font-family: 'Fondamento', cursive;
   --font-alt: 'Open Sans', sans-serif;
   
   --color-golden: #DCCA87;
