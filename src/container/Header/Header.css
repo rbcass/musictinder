@@ -1,3 +1,7 @@
+/*importing font for title test*/
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=Pirata+One&display=swap');
+
+
 html{
     background: rgb(0,0,0);
 background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 55%, rgba(41,22,2,1) 81%, rgba(47,24,2,1) 92%, rgba(0,0,0,1) 100%);
@@ -7,7 +11,7 @@ color: white;
 .header{
 
 
-    margin-top: 32vh ;
+    margin-top: 30vh ;
     text-align: center;
 
 
@@ -15,6 +19,9 @@ color: white;
 }
 
 .title{
+    font-family: 'Pirata One', cursive;
+    font-size: 85px;
+    letter-spacing: 8px;
     text-align: center;
     line-height: 50px;
 }
@@ -27,28 +34,52 @@ color: white;
     text-transform: capitalize;
 }
 
-/* SOURCE: https://uiverse.io/satyamchaudharydev/loud-seahorse-55   20/03/23  */
+/* SOURCE: https://uiverse.io/adamgiebl/popular-termite-0  20/03/23  */
 .mainbutt{
-    --bg: #000;
-    --hover-bg: #ff90e8;
-    --hover-text: #000;
-    color: #fff;
-    border: 1px solid var(--bg);
-    border-radius: 4px;
-    padding: 0.8em 2em;
-    background: var(--bg);
-    transition: 0.2s;
+    font-size: 18px;
+    cursor: pointer;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.7em 2em;
+  border: 3px solid #ffffff;
+  border-radius: 2px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  color: #000000;
+  background-color: #e6086c;
+  text-decoration: none;
+  transition: 0.3s ease all;
+  z-index: 1;
 }
 
-.mainbutt{
-    color: var(--hover-text);
-    transform: translate(-0.25rem,-0.25rem);
-    background: var(--hover-bg);
-    box-shadow: 0.25rem 0.25rem var(--bg);
+.mainbutt:before{
+    transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #ff6004;
+  z-index: -1;
 }
 
-.button:active{
-    transform: translate(0);
-  box-shadow: none;
+.mainbutt:hover, .mainbutt:focus{
+    color: rgb(0, 0, 0);
+}
+
+.mainbutt:hover:before, .mainbutt:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+
+.mainbutt:active{
+    transform: scale(0.9);
 
 }
