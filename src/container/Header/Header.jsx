@@ -9,7 +9,7 @@ const Header = () => (
   <div className='header' id="home">
     <h1 className='title'>JAM-MATCH</h1>
     <div className='headerImg'>
-      {/* <img src={images.guitar} alt = "guitargif"/> */}
+       
       
 
     </div>
@@ -18,6 +18,8 @@ const Header = () => (
       <a href="#"><button className='mainbutt'>Match Me!</button></a>
 
 </div>
+{/**welcome element. will decide whether to delete or save */}
+<img src={images.guitar} className="img" alt = "guitargif"/>  
   </div>
 );
 
