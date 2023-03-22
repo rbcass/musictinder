@@ -1,11 +1,14 @@
 import React from 'react';
 
 import {images} from '../../constants';
-import {headerInfo} from '../../components';
 import './Header.css';
 
 //this element is for the "homepage", we are going to try an implement scroll
+
+//scroll bug at home element
 const Header = () => (
+
+  
   <div className='header' id="home">
     <h1 className='title'>JAM-MATCH</h1>
     <div className='headerImg'>

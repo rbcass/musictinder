@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-scroll';
 import { useState } from 'react';
 //** react-icons installed,  */
 import {GiHamburgerMenu} from 'react-icons/gi';
@@ -21,8 +22,28 @@ const Navbar = () => {
       <img src = {images.jam_match}/>
     </div>
     <ul className='navLinks'>
-      <li className='sans'><a href="#">Home</a></li>
-      <li className='sans'><a href="#">About</a></li>
+      <li >
+      <Link 
+             activeClass="active" 
+            to="home" 
+           spy={true} 
+           smooth={true} 
+           duration={500}>
+            Home
+           </Link>
+           </li>
+  
+
+      <li>
+      <Link 
+             activeClass="active" 
+            to="aboutID" 
+           spy={true} 
+           smooth={true} 
+           duration={500}>
+            About</Link></li>
+     
+
       <li className='sans'><a href="#">Profiles</a></li>
       <li className='sans'><a href="#">Blog</a></li>
       <li className='sans'><a href="#">Contact</a></li>
