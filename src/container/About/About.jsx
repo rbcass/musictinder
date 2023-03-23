@@ -8,13 +8,11 @@ const About = () => (
     <div className='aboutInfo_flex__center'>
         <h1>†  ABOUT  †</h1>
       </div>
+      <img src={images.smoke} alt="smoke" className='imgAb'/>
       <div className='test'>
-        <h3>testeststest</h3>
+     <h2>text text text</h2>
+        
       </div>
-
-      <div className='aboutIMG'>
-      
-      </div> 
     
   </div>
   

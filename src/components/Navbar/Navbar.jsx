@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { useState } from 'react';
+import { NavLink as RouterLink, useLocation, useNavigate } from "react-router-dom";
 //** react-icons installed,  */
 import {GiHamburgerMenu} from 'react-icons/gi';
 import {GiGuitarBassHead} from 'react-icons/gi';
@@ -51,7 +52,8 @@ const Navbar = () => {
     </ul>
     {/** seperate section for login section*/}
     <div className='login'>
-      <a href="#" className='sans'>Log-In / Sign-Up</a>
+      {/**we can change this to RouterLink maybe */}
+      <a href="SignIn" className='sans'>Log-In / Sign-Up</a>
     </div>
      
      {/**for better accessibility, a shrink menu should be added, so when people are using mobile/smaller screen the menu/navbar still appears  */}
