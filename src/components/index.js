@@ -1,10 +1,10 @@
 
-import Newsletter from './Footer/Newsletter';
+import Ticker from './Ticker/Ticker';
 import FooterOverlay from './Footer/FooterOverlay';
 import Navbar from './Navbar/Navbar';
 
 export {
-  Newsletter,
+  Ticker,
   FooterOverlay,
   Navbar,
 };

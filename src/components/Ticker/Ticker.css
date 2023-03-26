@@ -1,0 +1,56 @@
+/* Javascript could be used but keyframes is nicer!*/
+
+ 
+.ticker-container{
+  bottom: 0;
+  position: fixed;
+  overflow: hidden;
+  color: white;
+  border-top: 0.5px  solid rgb(255, 255, 255); 
+  background-color: black;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box; 
+  
+  
+}
+
+.ticker{
+    animation-name: ticker;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+    box-sizing: content-box;
+    animation-timing-function: linear;
+    font-size: 30px;
+    
+}
+
+.tline{
+    display: inline-block;
+    
+}
+
+
+@-webkit-keyframes ticker{
+    0%{
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+    
+    }
+
+    100%{
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes ticker{
+    0%{
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+    }
+
+    100%{
+        transform: translate3d(-100%, 0, 0);
+        display: inline-block;
+    }
+}

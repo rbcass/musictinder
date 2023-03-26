@@ -1,6 +1,8 @@
 import React from 'react'
 import {images} from '../../constants';
 import { Navbar } from '../../components';
+import {Ticker} from '../../components';
+
 import './SignIn.css'
 
 const SignIn = () => {
@@ -17,8 +19,9 @@ const SignIn = () => {
       {/**manually import navbar */}
       <div>
       <Navbar/>
+      <Ticker/>
     </div>
-
+      
       <h2>SiGN UP</h2>
       <form className='form'>
 
@@ -111,10 +114,11 @@ const SignIn = () => {
 
       </section>
 
-      <input type={"submit"}/>
+      <input type={"submit"} id="submit"/>
       </form>
     </div>
-  
+
+   
   )
 }
 

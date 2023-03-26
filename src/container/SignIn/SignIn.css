@@ -1,24 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=Libre+Baskerville&family=Pirata+One&display=swap');
 
 h2{
     align-items: center;
     text-align: center;
     font-size: 50px;
-     line-height: 6pc; 
+     line-height: 8pc; 
 }
 
 .SignUp{
     /* border-style: solid white; */
     
+    
 }
 
 .form{
-    
+    border:1px solid white;
     text-align: center;
     align-items: center;
-    font-size: 26px;
+    font-size: 30px;
     line-height: 6pc;
-    word-spacing: 10px;
+    word-spacing: 11px;
 }
 
 .pref-content{
@@ -30,4 +31,36 @@ select{
     font-size: 18px;
   border: none;
   background: white; 
+}
+
+#name{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 15px;
+    padding: 0.25em 0.5em;
+}
+
+#bio{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 15px;
+    padding: 0.25em 0.5em;
+}
+
+#submit{
+    cursor: pointer;
+    border: 2px solid #000;
+    border-radius: 3px;
+    color: #000;
+    background: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    padding: 12px 20px;
+    text-align:center;
+    transition-duration: .15s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    font-family: 'Fondamento', sans-serif,cursive;
+}
+#submit:hover{
+    background: rgb(255, 136, 0);
 }
