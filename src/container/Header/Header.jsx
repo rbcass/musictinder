@@ -5,10 +5,15 @@ import './Header.css';
 
 //this element is for the "homepage", we are going to try an implement scroll
 
-//scroll bug at home element
-const Header = () => (
+//scroll bug at home element (scrolls downwards too much when home is clicked)
+const Header = () => {
 
-  
+  {/**function to check element */}
+  const clickHandle = () =>{
+    console.log('clicked')
+  }
+
+  return(
   <div className='header' id="home">
     <h1 className='title'>JAM-MATCH</h1>
     <div className='headerImg'>
@@ -18,12 +23,12 @@ const Header = () => (
     </div>
     <div className='headerInfo'>
       <h1 className='subtitle'>One match away from a world tour...</h1>
-      <a href="#"><button className='mainbutt'>Match Me!</button></a>
+      <a href="\SignIn"><button className='mainbutt' onClick={clickHandle}>Match Me!</button></a>
 
 </div>
 {/**welcome element. will decide whether to delete or save */}
 <img src={images.guitar} className="img" alt = "guitargif"/>  
   </div>
-);
+)};
 
 export default Header;

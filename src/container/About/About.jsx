@@ -10,7 +10,7 @@ const About = () => (
       </div>
       <img src={images.smoke} alt="smoke" className='imgAb'/>
       <div className='test'>
-     <h2>text text text</h2>
+     <h2>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. </h2>
         
       </div>
     

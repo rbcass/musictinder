@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Fondamento&family=Pirata+One&display=swap');
+
+h2{
+    align-items: center;
+    text-align: center;
+    font-size: 50px;
+     line-height: 6pc; 
+}
+
+.SignUp{
+    /* border-style: solid white; */
+    
+}
+
+.form{
+    
+    text-align: center;
+    align-items: center;
+    font-size: 26px;
+    line-height: 6pc;
+    word-spacing: 10px;
+}
+
+.pref-content{
+    /* line-height: 20pc; */
+}
+
+select{
+    font-family: 'Fondamento', sans-serif,cursive;
+    font-size: 18px;
+  border: none;
+  background: white; 
+}
