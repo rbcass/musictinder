@@ -2,6 +2,7 @@ import React from 'react'
 import {images} from '../../constants';
 import { Navbar } from '../../components';
 import {Ticker} from '../../components';
+import { useState } from 'react';
 
 import './SignIn.css'
 //js file crashes the app lol
@@ -15,6 +16,14 @@ const SignIn = () => {
       <Navbar/>
     </div>
   }
+
+  const [formData, setFormData] = useState({
+    //see if we need this
+  })
+
+
+
+
   return (
     
     <div className='SignUp'>
@@ -28,13 +37,14 @@ const SignIn = () => {
       <form className='form'>
 
  {/** input for photo */}
-        <section className='photo'>
-          <input type={"url"} name="photo" required={true}/>
-         <div></div>
-        </section>
+      
       
       <section>
         <h3>My profile:</h3>
+        <section className='photo'>
+          <input type={"url"} name="photo" placeholder='url for photo' required={true}/>
+         <div></div>
+        </section>
         {/** input for name  */}
       <label htmlFor='name'> Name: </label>
       <input id='name' type={"text"} name="name" placeholder='First Name'
