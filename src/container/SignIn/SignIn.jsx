@@ -4,6 +4,8 @@ import { Navbar } from '../../components';
 import {Ticker} from '../../components';
 
 import './SignIn.css'
+//js file crashes the app lol
+// import './SI.js'
 
 const SignIn = () => {
 
@@ -72,9 +74,11 @@ const SignIn = () => {
 
       {/**About profile desc */}
       <section></section>
-      <label htmlFor='bio'> Bio: </label>
-      <input id='bio' name='bio' type={"text"} required={"false"} placeholder="I am a rock drummer..."
+      
+      <label htmlFor='bio' > Bio: </label>
+      <textarea id='bio' name='bio' rows={3} type={"text"} required={"false"} placeholder="I am a rock drummer..."
       />
+   
 
 
       
@@ -107,15 +111,20 @@ const SignIn = () => {
         <option value={"Bass"}>Bass</option>
         
       </select>
-
+   
       </div>
-
+        
+      
 
 
       </section>
 
       <input type={"submit"} id="submit"/>
       </form>
+      {/**gifs! */}
+      <img src={images.metal} alt="metal" className='metal'/>
+      <img src={images.yuri} alt="yuri" className='yuri'/>
+      
     </div>
 
    
