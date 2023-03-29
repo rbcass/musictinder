@@ -3,7 +3,7 @@ import Profiles from './Profiles/Profiles';
 import Contact from './Contact/Contact';
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
-import Intro from './Intro/Intro';
+import Match from './Match/Match';
 import SignIn from './SignIn/SignIn';
 
 export {
@@ -13,7 +13,7 @@ export {
   Footer,
   SignIn,
   Header,
-  Intro,
+  Match,
   
   
 };

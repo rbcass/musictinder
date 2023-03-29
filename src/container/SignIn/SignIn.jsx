@@ -1,12 +1,20 @@
 import React from 'react'
 import {images} from '../../constants';
 import { Navbar } from '../../components';
+import {useNavigate} from 'react-router-dom';
 import {Ticker} from '../../components';
 import { useState } from 'react';
+import {Match} from '../../container'
+
+import axios from 'axios'
 
 import './SignIn.css'
+import { Link } from 'react-scroll';
 //js file crashes the app lol
 // import './SI.js'
+
+//s
+
 
 const SignIn = () => {
 
@@ -17,11 +25,22 @@ const SignIn = () => {
     </div>
   }
 
+
+
+  //form data for backend
   const [formData, setFormData] = useState({
     //see if we need this
+    name:'',
+    type:'',
+    genre:'',
+    instrument:'',
+    url:'',
+    about:'',
+    p_type:'',
+    p_genre:'',
+    p_instrument:'',
+    matches: []
   })
-
-
 
 
   return (
@@ -32,6 +51,8 @@ const SignIn = () => {
       <Navbar/>
       <Ticker/>
     </div>
+
+
       
       <h2>SiGN UP</h2>
       <form className='form'>
@@ -42,7 +63,7 @@ const SignIn = () => {
       <section>
         <h3>My profile:</h3>
         <section className='photo'>
-          <input type={"url"} name="photo" placeholder='url for photo' required={true}/>
+          <input type={"url"} id="url"name="photo" placeholder='url for photo' required={true}/>
          <div></div>
         </section>
         {/** input for name  */}
@@ -129,7 +150,7 @@ const SignIn = () => {
 
       </section>
 
-      <input type={"submit"} id="submit"/>
+      <input type={"submit"} id="submit" onClick={event =>  window.location.href='/Match'}/>
       </form>
       {/**gifs! */}
       <img src={images.metal} alt="metal" className='metal'/>

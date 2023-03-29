@@ -6,6 +6,12 @@ const uri = 'mongodb+srv://cass:hiphophip11@cluster0.seh5fcc.mongodb.net/?retryW
 const express = require('express')
 const app = express()
 
+//
+const client = new MongoClient(uri)
+const database = client.db('app-data')
+
+
+
 app.listen(PORT, () => console.log('server is runnong on PORT ' + PORT))
 
 app.get('/', (req,res) =>{
@@ -13,7 +19,7 @@ app.get('/', (req,res) =>{
 })
 
 app.post('/signin', (req,res) =>{
-    res.json("BACKEND!")
+    res.send("BACKEND!")
 })
 
 
@@ -39,3 +45,36 @@ app.post('/signin', (req,res) =>{
 
 // })
 
+
+//requesting formdata
+app.put('/user', async (req,res) => {
+    const client = new MongoClient(uri)
+    const formData = req.body.formData
+
+    try{
+        await client.connect()
+        const database = client.db('app-data')
+        const users = database.colllection('users')
+
+
+        const query = {name: formData.name}
+        const update ={$set:{
+            name: formData.name,
+            type: formData.type,
+            genre: formData.genre,
+            about: formData.about,
+            url:formData.url,
+            p_type:formData.p_type,
+            p_genre:formData.p_genre,
+            p_instrument:formData.p_instrument,
+            matches: formData.matches
+
+        }}
+
+        const insert = await users.updateOne(query, update)
+        res.send(insert)
+    } finally{
+        await client.close();
+    }
+
+})

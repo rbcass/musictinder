@@ -7,6 +7,7 @@ import smoke from '../assets/smoke.gif';
 import fog from '../assets/fog.gif';
 import metal from '../assets/metalman.gif';
 import yuri from '../assets/yuri.gif';
+import julian from '../assets/julian.jpg';
 
 
 
@@ -20,6 +21,7 @@ export default {
   smoke,
   fog,
   metal,
-  yuri
+  yuri, 
+  julian
   
 };
