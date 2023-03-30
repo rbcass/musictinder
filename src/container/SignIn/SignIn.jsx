@@ -2,29 +2,37 @@ import React from 'react'
 import {images} from '../../constants';
 import { Navbar } from '../../components';
 import {useNavigate} from 'react-router-dom';
+import { Component } from 'react';
+    import { Redirect } from "react-router";
 import {Ticker} from '../../components';
 import { useState } from 'react';
 import {Match} from '../../container'
 
-import axios from 'axios'
 
 import './SignIn.css'
 import { Link } from 'react-scroll';
 //js file crashes the app lol
 // import './SI.js'
 
-//s
+
 
 
 const SignIn = () => {
 
-  //navbar does not appear on Sign Up page!
-  const nav =() =>{
-    <div>
-      <Navbar/>
-    </div>
-  }
+  
+// let navigate = useNavigate();
+// const routeChange = () => {
+//   let path = `Match`;
+//   navigate(path);
+// }
 
+//redirect to match after submit
+const reRoute =() =>{
+  
+  const navigate = useNavigate;
+  navigate('/Match')
+ 
+}
 
 
   //form data for backend
@@ -150,11 +158,12 @@ const SignIn = () => {
 
       </section>
 
-      <input type={"submit"} id="submit" onClick={event =>  window.location.href='/Match'}/>
+      <input type={"submit"} id="submit" onClick={reRoute}/>
       </form>
       {/**gifs! */}
       <img src={images.metal} alt="metal" className='metal'/>
       <img src={images.yuri} alt="yuri" className='yuri'/>
+      <button width='500px' onClick={reRoute()}>CLICK CLIKC</button>
       
     </div>
 

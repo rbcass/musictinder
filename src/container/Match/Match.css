@@ -1,9 +1,5 @@
-
-
-html {
+.match {
     overflow: hidden;
-    
-   
   }
   
   .row {
@@ -12,6 +8,15 @@ html {
   
   .row>* {
     margin: 5px;
+  }
+  
+  h3{
+    font-size: 25px;
+    font-weight: 200;
+    
+  }
+  span{
+    background-color: black;
   }
   
   
@@ -28,12 +33,13 @@ html {
   .card {
     position: relative;
     background-color: burlywood;
-    margin-left: 85vh;
-    margin-top:25vh ;
+     margin-left: 77vh; 
+    /* margin-left: 270%; */
+    margin-top:20vh ;
     width: 100vw;
-    max-width: 300px;
-    height: 350px;
-    box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.30);
+    max-width: 400px;
+    height: 450px;
+    box-shadow: 0px 0px 20px 0px rgba(255, 255, 255, 0.3);
     border-radius: 20px;
     background-size: cover;
     background-position: center;
@@ -46,16 +52,22 @@ html {
   
   
   .card h3 {
+    
+    
+  }
+
+  .nameh3{
+
     position: absolute;
     bottom: 0;
     margin: 10px;
     color: #fff;
   }
   
-  .infoText {
+  .messageSwipe {
     width: 100%;
     justify-content: center;
-    display: flex;
+    margin-top: 20%;
     color: #fff;
     animation-name: popup;
     animation-duration: 800ms;
@@ -72,3 +84,11 @@ html {
     100% { transform: scale(1,1) }
   }
   
+
+  .typee{
+    margin-right: 100px;
+    
+    bottom: 0;
+    margin: 10px;
+    color: #fff;
+  }
