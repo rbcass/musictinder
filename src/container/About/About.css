@@ -4,22 +4,65 @@
     margin-top: 22.5vh;
 }
 
+
+
+#aboutText{
+    
+    text-align: center;
+    display: inline;
+    align-items: center;
+    display: inline-block;
+    border: 5px solid white;
+    position: relative;
+    color: black;
+    left: 50%; 
+    transform: translateX(-50%);
+    background-color: beige;
+    opacity: 0.5;
+    
+}
+
 .about{
     /* line-height: 50pc; */
+    
+}
+.styl{
+    /* height:100%; */
+    
+background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 .aboutInfo_flex__center{
     font-family: Pirata One, cursive;
     letter-spacing: 7px;
     font-size: 40px;
     text-align: center;
+    
 }
 .test{
-    margin-left: 20pc;
-    line-height: 50pc;
+    
+    line-height: 10pc;
 }
 
-.imgAb{
-    position:absolute;
-    z-index:0;
-    width: 65rem ;
+.flip{
+    animation: 2s flippy ease infinite
 }
+
+@keyframes flippy{
+    0% {
+        opacity: 0;
+        transform: rotateX(90def);
+      }
+      50% {
+        opacity: 1;
+        transform: rotateX(720deg);
+      }
+      100% {
+        
+        opacity: 1;
+        transform: rotateX(720deg);
+      }
+}
+

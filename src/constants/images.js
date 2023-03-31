@@ -6,6 +6,7 @@ import guitar from '../assets/guitar.gif';
 import smoke from '../assets/smoke.gif';
 import fog from '../assets/fog.gif';
 import metal from '../assets/metalman.gif';
+import about from '../assets/about.gif';
 import yuri from '../assets/yuri.gif';
 import julian from '../assets/julian.jpg';
 
@@ -22,6 +23,7 @@ export default {
   fog,
   metal,
   yuri, 
-  julian
+  julian,
+  about
   
 };

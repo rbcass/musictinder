@@ -163,7 +163,7 @@ const reRoute =() =>{
       {/**gifs! */}
       <img src={images.metal} alt="metal" className='metal'/>
       <img src={images.yuri} alt="yuri" className='yuri'/>
-      <button width='500px' onClick={reRoute()}>CLICK CLIKC</button>
+      {/* <button width='500px' onClick={reRoute()}>CLICK CLIKC</button> */}
       
     </div>
 
