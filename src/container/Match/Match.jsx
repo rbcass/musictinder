@@ -3,6 +3,9 @@ import { Navbar } from '../../components';
 import julian from '../../assets/julian.jpg';
 import TinderCard from 'react-tinder-card';
 import {images} from '../../constants';
+import {TiTickOutline} from 'react-icons/ti';
+import {ImCross} from 'react-icons/im';
+import {IconContext} from "react-icons";
 import {Ticker} from '../../components';
 import  { useState } from 'react'
 import './Match.css';
@@ -51,6 +54,14 @@ const swiped = (direction, nameToDelete) => {
 
 }
 
+const descision =() =>{
+  if(lastDirection == 'left'){
+     
+  }
+}
+
+
+
 const outOfFrame = (name) => {
   console.log(name + ' left the screen!')
 }
@@ -73,13 +84,29 @@ const outOfFrame = (name) => {
    className='card' >
     
               <h3 className='nameh3'><span>{character.name}</span></h3>
-              <h3 className='typee'><span>{character.type}</span></h3>     
+              <h3 className='typee'><span>{character.type}</span></h3>    
+              
+              <div className='swipeButt'>
+        <IconContext.Provider value={{className:'tick'}}>
+        <TiTickOutline onClick={console.log('tick')}/>
+        </IconContext.Provider>
+
+        <IconContext.Provider value={{className:'cross'}}>
+        <ImCross/>
+        </IconContext.Provider>
+      </div>
+               
               
             </div>
           </TinderCard>
         )}
       </div>
+
+      {/**we are going to try to add buttons now */}
+      
+     
       {lastDirection ? <h2 className='messageSwipe'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
+      
 
 
   </div> 

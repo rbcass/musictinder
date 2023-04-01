@@ -1,19 +1,27 @@
 //all backend stuff
-const PORT = 8000
-//connect to the database
-const {MongoClient} = require('mongodb')
-const uri = 'mongodb+srv://cass:hiphophip11@cluster0.seh5fcc.mongodb.net/?retryWrites=true&w=majority'
+// const PORT = 8000
+
+const PORT = process.env.PORT || 8000;
+//connect to the database AND IMPORTS
+const MongoClient = require('mongodb').MongoClient;
+
+const uri = 'mongodb+srv://cass:hiphophip11@cluster0.seh5fcc.mongodb.net/?retryWrites=true&w=majority';
+const bodyParser = require('body-parser');
 const express = require('express')
 const app = express()
 
-//
-const client = new MongoClient(uri)
+//INITIALISING DATABASE
+// const client = new MongoClient(uri)
 const database = client.db('app-data')
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
-app.listen(PORT, () => console.log('server is runnong on PORT ' + PORT))
+//LISTENING! LISTENING!
+// app.listen(PORT, () => console.log('server is runnong on PORT ' + PORT))
 
+//JUST A FEW EXAMPLES
 app.get('/', (req,res) =>{
     res.json("BACKEND!")
 })
@@ -46,35 +54,16 @@ app.post('/signin', (req,res) =>{
 // })
 
 
-//requesting formdata
-app.put('/user', async (req,res) => {
-    const client = new MongoClient(uri)
-    const formData = req.body.formData
-
-    try{
-        await client.connect()
-        const database = client.db('app-data')
-        const users = database.colllection('users')
 
 
-        const query = {name: formData.name}
-        const update ={$set:{
-            name: formData.name,
-            type: formData.type,
-            genre: formData.genre,
-            about: formData.about,
-            url:formData.url,
-            p_type:formData.p_type,
-            p_genre:formData.p_genre,
-            p_instrument:formData.p_instrument,
-            matches: formData.matches
+//OK, ADDING DATA TO MONGO
 
-        }}
+MongoClient.connect('mongodb://localhost:27017/', (err, client) => {
+  if (err) return console.log(err);
+  database = client.db('app-data')
+  app.listen(PORT, () => {
+    console.log('listening on ' + PORT);
+  });
+});
 
-        const insert = await users.updateOne(query, update)
-        res.send(insert)
-    } finally{
-        await client.close();
-    }
 
-})

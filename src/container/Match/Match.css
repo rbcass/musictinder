@@ -55,6 +55,23 @@
     
     
   }
+  /*buttons*/
+  .tick{
+   font-size: 80px;
+    
+  }
+  .cross{
+    font-size: 60px;
+  }
+
+  .swipeButt{
+    
+    bottom:0;
+    position:absolute;
+    margin-right: 100%;
+    margin-left: 85%;
+    line-height: 12.5pc;
+  }
 
   .nameh3{
 
@@ -74,16 +91,6 @@
   }
   
 
-  @keyframes popup {
-    0%   { transform: scale(1,1) }
-    10%  { transform: scale(1.1,1.1) }
-    30%  { transform: scale(.9,.9) }
-    50%  { transform: scale(1,1) }
-    57%  { transform: scale(1,1) }
-    64%  { transform: scale(1,1) }
-    100% { transform: scale(1,1) }
-  }
-  
 
   .typee{
     margin-right: 100px;

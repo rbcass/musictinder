@@ -8,7 +8,9 @@ import fog from '../assets/fog.gif';
 import metal from '../assets/metalman.gif';
 import about from '../assets/about.gif';
 import yuri from '../assets/yuri.gif';
+import sign from '../assets/sign.gif';
 import julian from '../assets/julian.jpg';
+
 
 
 
@@ -24,6 +26,7 @@ export default {
   metal,
   yuri, 
   julian,
-  about
+  about,
+  sign
   
 };

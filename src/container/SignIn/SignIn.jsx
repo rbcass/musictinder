@@ -3,12 +3,11 @@ import {images} from '../../constants';
 import { Navbar } from '../../components';
 import {useNavigate} from 'react-router-dom';
 import { Component } from 'react';
-    import { Redirect } from "react-router";
+import { Redirect } from "react-router";
 import {Ticker} from '../../components';
 import { useState } from 'react';
 import {Match} from '../../container'
-
-
+import axios from 'axios';
 import './SignIn.css'
 import { Link } from 'react-scroll';
 //js file crashes the app lol
@@ -36,6 +35,8 @@ const reRoute =() =>{
 
 
   //form data for backend
+  //we can change the name
+  
   const [formData, setFormData] = useState({
     //see if we need this
     name:'',
@@ -51,9 +52,29 @@ const reRoute =() =>{
   })
 
 
+
+//backend re-direction
+const handleSubmit = (e) => {
+  e.preventDefault();
+  //axios is a link to server side, we will send our data using axios
+  axios.post('/submit-form', formData)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+//initialising values
+const handleChange = (e) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
+
+
   return (
     
-    <div className='SignUp'>
+    <div className='SignUp' style=  {{background: `url(${images.sign})`, backgroundRepeat:'no-repeat', backgroundSize:'cover',}}>
       {/**manually import navbar */}
       <div>
       <Navbar/>
@@ -63,7 +84,7 @@ const reRoute =() =>{
 
       
       <h2>SiGN UP</h2>
-      <form className='form'>
+      <form className='form' onSubmit={handleSubmit}>
 
  {/** input for photo */}
       
@@ -71,20 +92,20 @@ const reRoute =() =>{
       <section>
         <h3>My profile:</h3>
         <section className='photo'>
-          <input type={"url"} id="url"name="photo" placeholder='url for photo' required={true}/>
+          <input type={"url"} id="url"name="photo" placeholder='url for photo' required={true} onChange={handleChange}/>
          <div></div>
         </section>
         {/** input for name  */}
       <label htmlFor='name'> Name: </label>
       <input id='name' type={"text"} name="name" placeholder='First Name'
-      required={true}>
+      required={true} onChange={handleChange}>
 
       </input>
 
       {/** input for person type  */}
       <label htmlFor='type'> Identity: </label>
       
-      <select  id='type' name='type' >
+      <select  id='type' name='type' onChange={handleChange}>
         <option value={"Musician"}>Musician</option>
         <option value={"Engineer"}>Engineer</option>
         <option value={"Establishment"}>Establishment</option>
@@ -93,8 +114,8 @@ const reRoute =() =>{
       
 
        {/** input for person genre  */}
-      <label htmlFor='genre'> Genre: </label>
-      <select  id='genre' name='genre' >
+      <label htmlFor='genre' > Genre: </label>
+      <select  id='genre' name='genre' onChange={handleChange} >
         <option value={"Rock"}>Rock</option>
         <option value={"Pop"}>Pop</option>
         <option value={"Jazz"}>Jazz</option>
@@ -103,7 +124,7 @@ const reRoute =() =>{
 
       {/** input for person instrument  */}
       <label htmlFor='instrument'> Instrument: </label>
-      <select id='instrument' name='instrument' >
+      <select id='instrument' name='instrument' onChange={handleChange}>
         <option value={"Guitar"}>Guitar</option>
         <option value={"Voice"}>Voice</option>
         <option value={"Drum"}>Drum</option>
@@ -115,7 +136,7 @@ const reRoute =() =>{
       <section></section>
       
       <label htmlFor='bio' > Bio: </label>
-      <textarea id='bio' name='bio' rows={3} type={"text"} required={"false"} placeholder="I am a rock drummer..."
+      <textarea id='bio' name='bio' rows={3} type={"text"} required={"false"} placeholder="I am a rock drummer..." onChange={handleChange}
       />
    
 
@@ -125,7 +146,7 @@ const reRoute =() =>{
       <h3>Preferences</h3>
          {/** input for person type  */}
       <label htmlFor='p_type'>Identity: </label>
-      <select  id='p_type' name='pref_type' >
+      <select  id='p_type' name='pref_type' onChange={handleChange} >
         <option value={"Musician"}>Musician</option>
         <option value={"Engineer"}>Engineer</option>
         <option value={"Establishment"}>Establishment</option>
@@ -134,7 +155,7 @@ const reRoute =() =>{
 
        {/** input for person genre  */}
       <label htmlFor='p_genre'> Genre: </label>
-      <select  id='p_genre' name='pref_genre' >
+      <select  id='p_genre' name='pref_genre' onChange={handleChange} >
         <option value={"Rock"}>Rock</option>
         <option value={"Pop"}>Pop</option>
         <option value={"Jazz"}>Jazz</option>
@@ -143,7 +164,7 @@ const reRoute =() =>{
 
       {/** input for person instrument  */}
       <label htmlFor='p_instrument'> Instrument: </label>
-      <select id='p_instrument' name='pref_instrument' >
+      <select id='p_instrument' name='pref_instrument' onChange={handleChange} >
         <option value={"Guitar"}>Guitar</option>
         <option value={"Voice"}>Voice</option>
         <option value={"Drum"}>Drum</option>
