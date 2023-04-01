@@ -39,17 +39,18 @@ const reRoute =() =>{
   
   const [formData, setFormData] = useState({
     //see if we need this
-    name:'',
-    type:'',
-    genre:'',
-    instrument:'',
-    url:'',
-    about:'',
-    p_type:'',
-    p_genre:'',
-    p_instrument:'',
-    matches: []
+  "name": "",
+  "type": "Musician",
+  "genre": "Rock",
+  "instrument": "Guitar",
+  "url": "",
+  "about": "",
+  "pref_type": "Musician",
+  "pref_genre": "Rock",
+  "pref_instrument": "Guitar",
+  "matches": []
   })
+
 
 
 
@@ -57,16 +58,21 @@ const reRoute =() =>{
 const handleSubmit = (e) => {
   e.preventDefault();
   //axios is a link to server side, we will send our data using axios
-  axios.post('/submit-form', formData)
+  axios.post('http://localhost:8000/submit-form', formData)
     .then((response) => {
       console.log(response);
+      console.log(response.data)
+      
     })
     .catch((error) => {
       console.log(error);
     });
 };
 
-//initialising values
+
+
+
+//initialising values when there's a change
 const handleChange = (e) => {
   setFormData({ ...formData, [e.target.name]: e.target.value });
 };
@@ -92,15 +98,15 @@ const handleChange = (e) => {
       <section>
         <h3>My profile:</h3>
         <section className='photo'>
-          <input type={"url"} id="url"name="photo" placeholder='url for photo' required={true} onChange={handleChange}/>
+          <input type={"url"} id="url"name="url" placeholder='url for photo' required={true} onChange={handleChange}/>
          <div></div>
         </section>
         {/** input for name  */}
       <label htmlFor='name'> Name: </label>
       <input id='name' type={"text"} name="name" placeholder='First Name'
-      required={true} onChange={handleChange}>
+      required={true} onChange={handleChange}/>
 
-      </input>
+      
 
       {/** input for person type  */}
       <label htmlFor='type'> Identity: </label>
@@ -136,7 +142,7 @@ const handleChange = (e) => {
       <section></section>
       
       <label htmlFor='bio' > Bio: </label>
-      <textarea id='bio' name='bio' rows={3} type={"text"} required={"false"} placeholder="I am a rock drummer..." onChange={handleChange}
+      <textarea id='bio' name='about' rows={3} type={"text"} required={false} placeholder="I am a rock drummer..." onChange={handleChange}
       />
    
 
@@ -179,7 +185,7 @@ const handleChange = (e) => {
 
       </section>
 
-      <input type={"submit"} id="submit" onClick={reRoute}/>
+      <input type={"submit"} id="submit" />
       </form>
       {/**gifs! */}
       <img src={images.metal} alt="metal" className='metal'/>
