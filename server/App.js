@@ -161,6 +161,20 @@ app.post('/submit-form', async (req, res) => {
     res.status(500).send('Error saving form data to database');
   }
 });
+
+//send to front-end (this doesn't send to front-end?)
+app.get('/form-data', async (req, res) => {
+  try {
+    const formDatas = await users.find().toArray();
+    res.setHeader('Content-Type', 'application/json');
+
+    res.status(200).send(JSON.stringify(formDatas, null, 2));
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error retrieving form data from database');
+  }
+});
+
   
  
 

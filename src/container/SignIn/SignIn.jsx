@@ -78,6 +78,17 @@ const handleChange = (e) => {
 };
 
 
+//fetch form data adn display
+async function fetchData() {
+  try {
+    const response = await axios.get('/form-data');
+    const formDatas = response.data;
+    // Do something with the form data
+    console.log(formDatas);
+  } catch (error) {
+    console.error(error);
+  }
+}
   return (
     
     <div className='SignUp' style=  {{background: `url(${images.sign})`, backgroundRepeat:'no-repeat', backgroundSize:'cover',}}>
