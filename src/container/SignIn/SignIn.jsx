@@ -4,6 +4,7 @@ import { Navbar } from '../../components';
 import {useNavigate} from 'react-router-dom';
 import { Component } from 'react';
 import { Redirect } from "react-router";
+import { withRouter } from 'react-router';
 import {Ticker} from '../../components';
 import { useState } from 'react';
 import {Match} from '../../container'
@@ -26,12 +27,11 @@ const SignIn = () => {
 // }
 
 //redirect to match after submit
-const reRoute =() =>{
+
   
-  const navigate = useNavigate;
-  navigate('/Match')
- 
-}
+  // const navigate = useNavigate;
+  
+
 
 
   //form data for backend
@@ -51,12 +51,14 @@ const reRoute =() =>{
   "matches": []
   })
 
+  const navigate = useNavigate();
 
 
 
 //backend re-direction
 const handleSubmit = async (e) => {
   e.preventDefault();
+  
   try {
     const response = await axios.post('http://localhost:8000/submit-form', formData, {
       headers: {
@@ -65,6 +67,7 @@ const handleSubmit = async (e) => {
     });
     console.log(response);
     console.log(response.data);
+    navigate('/Match')
   } catch (error) {
     console.log(error);
   }
