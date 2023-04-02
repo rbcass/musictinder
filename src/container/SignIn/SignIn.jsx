@@ -55,20 +55,20 @@ const reRoute =() =>{
 
 
 //backend re-direction
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
-  //axios is a link to server side, we will send our data using axios
-  axios.post('http://localhost:8000/submit-form', formData)
-    .then((response) => {
-      console.log(response);
-      console.log(response.data)
-      
-    })
-    .catch((error) => {
-      console.log(error);
+  try {
+    const response = await axios.post('http://localhost:8000/submit-form', formData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
     });
+    console.log(response);
+    console.log(response.data);
+  } catch (error) {
+    console.log(error);
+  }
 };
-
 
 
 
@@ -90,7 +90,7 @@ const handleChange = (e) => {
 
       
       <h2>SiGN UP</h2>
-      <form className='form' onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit} >
 
  {/** input for photo */}
       

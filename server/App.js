@@ -12,8 +12,8 @@ const uri = 'mongodb+srv://cass:hiphophip11@cluster0.seh5fcc.mongodb.net/?retryW
 //STARTING AGAIN!!!!!!
 //connecting to mongo
 
-//api routes
-// app.use('/api', apiRoutes);
+
+//  app.use('/api', apiRoutes);
 
 app.use(cors());
 
@@ -22,6 +22,7 @@ app.use(cors());
 //app listen just to check
 app.listen(PORT, () => console.log('server is runnong on PORT ' + PORT))
 
+//default test
 app.get('/', (req,res) =>{
     res.json("BACKEND!")
 })
@@ -65,36 +66,38 @@ async function run() {
 
   
 
+  //body parser doesn't exist anymore so we use express
   app.use(express.urlencoded({extended: true}));
   app.use(express.json());
 
 
+  //this is the POST funstion that deals with our data
 
-app.post('/submit-form',  (req, res) => {
+// app.post('/submit-form',  (req, res) => {
 
 
-    const formData = req.body;
+//     const formData = req.body;
 
-    // res.json({message: 'Form submitted'})
+//     // res.json({message: 'Form submitted'})
 
-    console.log(formData);
-    // res.json(formData);
+//     console.log(formData);
+//     // res.json(formData);
 
-    res.send(`
-    <h1>Form Submitted Successfully!</h1>
-    <p>Name: ${formData.name}</p>
-    <p>Type: ${formData.type}</p>
-    <p>Genre: ${formData.genre}</p>
-    <p>Instrument: ${formData.instrument}</p>
-    <p>URL: ${formData.url}</p>
-    <p>About: ${formData.about}</p>
-    <p>Preferred Type: ${formData.pref_type}</p>
-    <p>Preferred Genre: ${formData.pref_genre}</p>
-    <p>Preferred Instrument: ${formData.pref_instrument}</p>
-    <p>Matches: ${formData.matches}</p>
-  `);
+//     res.send(`
+//     <h1>Form Submitted Successfully!</h1>
+//     <p>Name: ${formData.name}</p>
+//     <p>Type: ${formData.type}</p>
+//     <p>Genre: ${formData.genre}</p>
+//     <p>Instrument: ${formData.instrument}</p>
+//     <p>URL: ${formData.url}</p>
+//     <p>About: ${formData.about}</p>
+//     <p>Preferred Type: ${formData.pref_type}</p>
+//     <p>Preferred Genre: ${formData.pref_genre}</p>
+//     <p>Preferred Instrument: ${formData.pref_instrument}</p>
+//     <p>Matches: ${formData.matches}</p>
+//   `);
   
-})
+// })
 
 //  app.get('/submit-form', (req, res) => {
 
@@ -117,8 +120,50 @@ app.post('/submit-form',  (req, res) => {
 //   res.send(html);
     
 //   });
+
+
+//trying to save to database
+const formDataSchema = new mongoose.Schema({
+  name: String,
+  type: String,
+  genre: String,
+  instrument: String,
+  url: String,
+  about: String,
+  pref_type: String,
+  pref_genre: String,
+  pref_instrument: String,
+  matches: Array
+});
+// Create a model based on the schema
+const FormData = mongoose.model('FormData', formDataSchema);
+
+//access our database and collection
+const database = client.db('app-data');
+const users = database.collection('users');
+
+// Connect to MongoDB Atlas cluster
+mongoose.connect('mongodb+srv://cass:hiphophip11@cluster0.seh5fcc.mongodb.net/?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log('MongoDB Atlas connected'))
+.catch(err => console.error(err));
+
+//i converted to async function
+app.post('/submit-form', async (req, res) => {
+  const formData = new FormData(req.body);
+  try {
+    await users.insertOne(formData);
+    res.status(200).send('Form data saved to database');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error saving form data to database');
+  }
+});
   
-  
+ 
+
   run().catch(console.dir);
 
 
