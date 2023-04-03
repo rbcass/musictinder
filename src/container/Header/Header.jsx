@@ -1,5 +1,9 @@
 import React from 'react';
+import Chatbot from "react-chatbot-kit";
 
+import config from "./config";
+import MessageParser from "./messageParser";
+import ActionProvider from "./ActionProvider";
 import {images} from '../../constants';
 import './Header.css';
 
@@ -16,6 +20,8 @@ const Header = () => {
   return(
   <div className='header' id="home">
     <h1 className='title'>JAM-MATCH</h1>
+    
+    
     <div className='headerImg'>
        
       
@@ -28,7 +34,10 @@ const Header = () => {
 </div>
 {/**welcome element. will decide whether to delete or save */}
 <img src={images.guitar} className="img" alt = "guitargif"/>  
+{/* 
+<Chatbot config={config} messageParser={MessageParser} actionProvider={ActionProvider}/> */}
   </div>
+  
 )};
 
 export default Header;

@@ -9,6 +9,7 @@ const content = () => {
        <Navbar />
     <Header/>
     <About/>
+    <Profiles/>
     </div>
   )
 }

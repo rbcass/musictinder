@@ -44,8 +44,14 @@ const Navbar = () => {
            duration={500}>
             About</Link></li>
      
-
-      <li className='sans'><a href="#">Profiles</a></li>
+     <li>
+       <Link
+       activeClass='active'
+      to="lineP" 
+           spy={true} 
+           smooth={true} 
+           duration={500}
+       >Profiles</Link></li>
       <li className='sans'><a href="#">Blog</a></li>
       <li className='sans'><a href="#">Contact</a></li>
       

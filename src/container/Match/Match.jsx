@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Navbar } from '../../components';
 import julian from '../../assets/julian.jpg';
 import TinderCard from 'react-tinder-card';
@@ -40,6 +40,7 @@ const people = [
 ]
 
 
+
 const Match = () => {
 
   
@@ -50,17 +51,14 @@ const [lastDirection, setLastDirection] = useState()
 const swiped = (direction, nameToDelete) => {
   console.log('removing: ' + nameToDelete)
   setLastDirection(direction)
-
+  
 
 }
-
-const descision =() =>{
-  if(lastDirection == 'left'){
-     
-  }
+//DELETE MAYBE?
+const handleSwipe = (direction, character) => {
+  console.log('swiped ' + direction + ' on ' + character.name);
+  setLastDirection(direction);
 }
-
-
 
 const outOfFrame = (name) => {
   console.log(name + ' left the screen!')
@@ -69,15 +67,17 @@ const outOfFrame = (name) => {
 
 
   
-  
 
   return(
   <div className='match'>
     <Navbar/>
     <Ticker/>
+    <div style={{ backgroundImage: `url(${images.pong})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '90vh' }}>
+      <div id='like'>Like</div>
+      <div id='dislike'>Dislike</div>
       <div className='cardContainer'>
         {characters.map((character) =>
-          <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+          <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)} preventSwipe={['up','down']}>
 
 
 <div style={{ backgroundImage:  `url(${character.url})`}} 
@@ -86,13 +86,14 @@ const outOfFrame = (name) => {
               <h3 className='nameh3'><span>{character.name}</span></h3>
               <h3 className='typee'><span>{character.type}</span></h3>    
               
+              {/**here are the buttons (react icons lol)  */}
               <div className='swipeButt'>
         <IconContext.Provider value={{className:'tick'}}>
-        <TiTickOutline onClick={console.log('tick')}/>
+        <TiTickOutline  />
         </IconContext.Provider>
 
         <IconContext.Provider value={{className:'cross'}}>
-        <ImCross/>
+        <ImCross />
         </IconContext.Provider>
       </div>
                
@@ -104,11 +105,20 @@ const outOfFrame = (name) => {
 
       {/**we are going to try to add buttons now */}
       
+      {/**text sayong of they liked or disliked*/}
      
-      {lastDirection ? <h2 className='messageSwipe'>You swiped {lastDirection}</h2> : <h2 className='infoText' />}
+      {lastDirection ? (
+  <h2 className='messageSwipe'>
+    You {lastDirection === 'left' ? 'liked' : 'disliked'} this.
+  </h2>
+) : (
+  <h2 className='infoText' />
+)} 
+
+
       
 
-
+      </div>
   </div> 
 )};
 
