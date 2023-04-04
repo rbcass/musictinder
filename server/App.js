@@ -177,6 +177,11 @@ app.get('/form-data', async (req, res) => {
   }
 });
 
+//get urls
+app.use((req, res, next) => {
+  console.log(`${req.method} request received at ${req.url}`);
+  next();
+});
   
  
 

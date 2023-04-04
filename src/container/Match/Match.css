@@ -64,14 +64,44 @@
     }
   
   /*laptop*/
-  @media (max-width: 768px) {
-    .cardC {
-      width: 100vw;
-      max-width: none;
-      height: auto;
-      margin: 0;
+
+  @media (max-width: 800px) {
+    .card {
+      margin-left: 10vw;
     }
   }
+
+  @media (max-width: 600px) {
+    .card {
+      margin-left: 10vw;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .card {
+      margin-left: 30vw;
+    }
+  }
+
+  
+  @media (max-width: 1080px) {
+    .card {
+      margin-left: 30vw;
+    }
+  }
+
+  @media (max-width: 1400px) {
+    .card {
+      margin-left: 34vw;
+    }
+  }
+
+  @media (max-width: 1900px) {
+    .card {
+      margin-left: 34vw;
+    }
+  }
+  
   
 
   
@@ -138,4 +168,10 @@
     font-size: 40px;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+  }
+
+  .genreCard{
+    position: absolute;
+  top: 0;
+  right: 10px;
   }

@@ -44,3 +44,7 @@
       max-width: calc(50% - 20px);
     }
   }
+
+  .filter-container{
+    text-align: center;
+  }

@@ -1,11 +1,14 @@
 //all backend stuff
 // const PORT = 8000
+//WE DO NOT USE THIS FILE.
+
+
 
 const PORT = process.env.PORT || 8000;
 //connect to the database AND IMPORTS
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = 'mongodb+srv://cass:hiphophip11@cluster0.seh5fcc.mongodb.net/?retryWrites=true&w=majority';
+
 const bodyParser = require('body-parser');
 const express = require('express')
 const app = express()
