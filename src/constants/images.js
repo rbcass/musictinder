@@ -11,6 +11,7 @@ import yuri from '../assets/yuri.gif';
 import sign from '../assets/sign.gif';
 import julian from '../assets/julian.jpg';
 import pong from '../assets/pong.gif';
+import tech from '../assets/tech.gif';
 import mguitar from '../assets/manguitar.gif';
 
 
@@ -31,6 +32,7 @@ export default {
   about,
   sign,
   pong,
-  mguitar
+  mguitar,
+  tech
   
 };

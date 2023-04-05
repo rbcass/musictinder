@@ -110,8 +110,10 @@ const outOfFrame = (name) => {
   <div className='match'>
     <Navbar/>
     <Ticker/>
-    <div style={{ backgroundImage: `url(${images.pong})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '90vh' }}>
+    <div style={{ backgroundImage: `url(${images.tech})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '90vh' }}>
       <div id='like'>Like</div>
+      <div id='matchh'>Swipe left to like</div>
+      <div id='nomatchh'>Swipe right to dislike</div>
       <div id='dislike'>Dislike</div>
       <div className='cardContainer'>
         {characters.map((character) =>

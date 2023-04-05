@@ -108,10 +108,13 @@
   /*buttons*/
   .tick{
    font-size: 80px;
+   color: green;
+   
     
   }
   .cross{
     font-size: 60px;
+    color: crimson;
   }
 
   .swipeButt{
@@ -159,6 +162,7 @@
     font-size: 40px;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    border: 2px solid rgb(255, 255, 255);
   }
 
   #dislike{
@@ -168,10 +172,23 @@
     font-size: 40px;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    border: 2px solid rgb(255, 255, 255);
   }
 
   .genreCard{
     position: absolute;
   top: 0;
   right: 10px;
+  }
+
+  #nomatchh{
+    right: 0;
+    position: absolute;
+    font-size: 21px;
+  }
+
+  #matchh{
+    left: 0;
+    position: absolute;
+    font-size: 21px;
   }
